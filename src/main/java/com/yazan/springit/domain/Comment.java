@@ -1,8 +1,6 @@
 package com.yazan.springit.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,5 +16,7 @@ public class Comment {
     private Long id;
     private String body;
 
+    @ManyToOne(mappedBy = "link")
+    private Link link;
 
 }
